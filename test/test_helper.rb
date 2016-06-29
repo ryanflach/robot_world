@@ -5,6 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'capybara'
+require 'launchy'
 
 module TestHelpers
 
@@ -18,4 +20,11 @@ module TestHelpers
     @database ||= RobotDirectory.new(database)
   end
 
+end
+
+Capybara.app = RobotDirectoryApp
+
+class FeatureTest < Minitest::Test
+  include Capybara::DSL
+  include TestHelpers
 end

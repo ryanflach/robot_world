@@ -1,3 +1,11 @@
 ---
-robots: []
-total: 0
+robots:
+- serial_number: 77
+  name: Ryan
+  city: State College
+  state: PA
+  avatar: https://robohash.org/77
+  birthdate: '1985-05-31'
+  date_hired: '2016-05-09'
+  department: Web Dev
+total: 1

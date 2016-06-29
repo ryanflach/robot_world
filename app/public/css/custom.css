@@ -1,0 +1,12 @@
+body {
+  background-image: url("/images/robots_@2X.png");
+  color: white;
+}
+
+form {
+  color: black;
+}
+
+label {
+  color: white;
+}

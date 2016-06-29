@@ -17,6 +17,11 @@ class RobotDirectoryApp < Sinatra::Base
     erb :index
   end
 
+  post '/robots' do
+    robot_directory.create(params[:robot])
+    redirect '/robots'
+  end
+
   def robot_directory
     directory = YAML::Store.new('db/robot_directory')
     @robot_directory ||= RobotDirectory.new(directory)

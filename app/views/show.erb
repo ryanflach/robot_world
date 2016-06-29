@@ -6,3 +6,10 @@
 <p>Birthdate: <%= @robot.birthdate %> </p>
 <p>Date Hired: <%= @robot.date_hired %> </p>
 <p>Department: <%= @robot.department %> </p>
+
+<form action="/robots/<%= @robot.serial_number %>" method="post">
+  <input type="hidden" name="_method" value="DELETE" />
+  <button type="submit">Delete Robot</button>
+</form>
+
+<a href="/robots/<%= @robot.serial_number %>/edit"><button type="button">Edit Robot</button></a>

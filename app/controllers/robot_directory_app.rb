@@ -38,6 +38,11 @@ class RobotDirectoryApp < Sinatra::Base
     redirect "/robots/#{serial}"
   end
 
+  delete '/robots/:serial_number' do |serial|
+    robot_directory.delete(serial.to_i)
+    redirect '/robots'
+  end
+
   def robot_directory
     directory = YAML::Store.new('db/robot_directory')
     @robot_directory ||= RobotDirectory.new(directory)

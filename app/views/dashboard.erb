@@ -4,15 +4,15 @@
 
 <% unless @robots.empty? %>
   <br>
-  <div class="row">
-    <div class="col-md-12 text-left">
+  <div class="row text-center">
+    <div class="col-md-12">
       <p><strong>Average robot age: <%= @avg_age %></strong></p>
     </div>
   </div>
 
   <br>
 
-  <div class="row">
+  <div class="row text-center">
     <div class="col-md-6"
       <p><strong>Year Hired Statistics:</strong></p>
     </div>
@@ -24,10 +24,10 @@
 
   <div class="row">
     <div class="col-md-6">
-      <table class="table table-hover">
+      <table class="table">
         <thead>
-          <th>Year</th>
-          <th>Number of Robots Hired</th>
+          <th class="col-md-2">Year</th>
+          <th class="col-md-4">Number of Robots Hired</th>
         </thead>
         <tbody>
           <% @years.each do |year, count| %>
@@ -43,8 +43,8 @@
     <div class="col-md-6">
       <table class="table">
         <thead>
-          <th>Department</th>
-          <th>Number of Robots in Department</th>
+          <th class="col-md-2">Department</th>
+          <th class="col-md-4">Number of Robots in Department</th>
         </thead>
         <tbody>
           <% @departments.each do |department, count| %>
@@ -61,7 +61,7 @@
   <br>
   <br>
 
-  <div class="row">
+  <div class="row text-center">
     <div class="col-md-6">
       <p><strong>City Statistics:</strong></p>
     </div>
@@ -75,8 +75,8 @@
     <div class="col-md-6">
       <table class="table">
         <thead>
-          <th>City</th>
-          <th>Number of Robots in City</th>
+          <th class="col-md-2">City</th>
+          <th class="col-md-4">Number of Robots in City</th>
         </thead>
         <tbody>
           <% @cities.each do |city, count| %>
@@ -92,8 +92,8 @@
     <div class="col-md-6">
       <table class="table">
         <thead>
-          <th>State</th>
-          <th>Number of Robots in State</th>
+          <th class="col-md-2">State</th>
+          <th class="col-md-4">Number of Robots in State</th>
         </thead>
         <tbody>
           <% @states.each do |state, count| %>

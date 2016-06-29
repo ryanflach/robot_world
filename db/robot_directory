@@ -1,11 +1,27 @@
 ---
 robots:
-- serial_number: 77
-  name: Ryan
-  city: State College
-  state: PA
-  avatar: https://robohash.org/77
-  birthdate: '1985-05-31'
-  date_hired: '2016-05-09'
+- serial_number: 150
+  name: Charlie
+  city: San Diego
+  state: CA
+  avatar: https://robohash.org/150
+  birthdate: '1980-06-20'
+  date_hired: '2004-05-10'
+  department: Linguistics
+- serial_number: 114
+  name: Regis
+  city: San Diego
+  state: CA
+  avatar: https://robohash.org/114
+  birthdate: '1999-05-12'
+  date_hired: '2016-04-12'
   department: Web Dev
-total: 1
+- serial_number: 112
+  name: Justin
+  city: San Francisco
+  state: CA
+  avatar: https://robohash.org/112
+  birthdate: '1995-02-12'
+  date_hired: '2009-02-05'
+  department: Wellness
+total: 3

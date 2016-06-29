@@ -1,8 +1,4 @@
-require 'models/robot_directory'
-
 class RobotDirectoryApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
 
   get '/' do
     @robots = robot_directory.all

@@ -1,5 +1,4 @@
 require 'yaml/store'
-require_relative 'robot'
 
 class RobotDirectory
   attr_reader :directory
@@ -94,6 +93,13 @@ class RobotDirectory
     unique_states = Hash.new(0)
     states.each { |state| unique_states[state] += 1 }
     unique_states
+  end
+
+  def delete_all
+    directory.transaction do
+      directory['robots'] = []
+      directory['total'] = 0
+    end
   end
 
 end

@@ -24,7 +24,7 @@ class RobotDirectoryApp < Sinatra::Base
   end
 
   get '/robots/:serial_number' do |serial|
-    robot_directory.find(serial.to_i)
+    @robot = robot_directory.find(serial.to_i)
     erb :show
   end
 

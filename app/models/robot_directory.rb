@@ -39,6 +39,10 @@ class RobotDirectory
     raw_robots.find { |robot| robot['serial_number'] == serial_number }
   end
 
+  def find(serial_number)
+    Robot.new(raw_robot(serial_number))
+  end
+
   def update(serial_number, robot)
     directory.transaction do
       target_robot = directory['robots'].find { |robot| robot['serial_number'] == serial_number }

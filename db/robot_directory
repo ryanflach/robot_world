@@ -1,10 +1,10 @@
 ---
 robots:
 - serial_number: 67
-  name: Ryan
+  name: Charlie
   city: State College
   state: PA
-  avatar: https://robohash.org/67
+  avatar: 
   birthdate: '1985-05-31'
   date_hired: '2016-05-09'
   department: STEM

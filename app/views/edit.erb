@@ -1,0 +1,17 @@
+<h1>Editing <%= @robot.name %></h1>
+<form action="/robots/<%= @robot.serial_number %>" method="post">
+  <input type="hidden" name="_method" value="PUT" />
+  <label for="robot[name]">Name</label>
+  <input type="text" name="robot[name]" value=<%= @robot.name %> required="required" />
+  <label for="robot[city]">City</label>
+  <input type="text" name="robot[city]" value=<%= @robot.city %> required="required" />
+  <label for="robot[state]">State</label>
+  <input type="text" name="robot[state]" value=<%= @robot.state %> required="required" />
+  <label for="robot[birthdate]">Birthdate</label>
+  <input type="date" name="robot[birthdate]" value=<%= @robot.birthdate %> required="required" />
+  <label for="robot[date_hired]">Date Hired</label>
+  <input type="date" name="robot[date_hired]" value=<%= @robot.date_hired %> required="required" />
+  <label for="robot[department]">Department</label>
+  <input type="text" name="robot[department]" value=<%= @robot.department %> required="required" />
+  <button type="submit" class="btn btn-default">Edit Robot</button>
+</form>

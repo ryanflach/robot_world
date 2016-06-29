@@ -28,6 +28,16 @@ class RobotDirectoryApp < Sinatra::Base
     erb :show
   end
 
+  get '/robots/:serial_number/edit' do |serial|
+    @robot = robot_directory.find(serial.to_i)
+    erb :edit
+  end
+
+  put '/robots/:serial_number' do |serial|
+    robot_directory.update(serial.to_i, params[:robot])
+    redirect "/robots/#{serial}"
+  end
+
   def robot_directory
     directory = YAML::Store.new('db/robot_directory')
     @robot_directory ||= RobotDirectory.new(directory)

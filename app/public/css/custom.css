@@ -10,3 +10,20 @@ form {
 label {
   color: white;
 }
+
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 5%;
+  left: 10%;
+}
+
+.heading {
+  border-bottom: 2px solid white;
+  margin: 10px;
+  padding-bottom: 5px;
+}
+
+.last {
+  margin: 10px 20px;
+}

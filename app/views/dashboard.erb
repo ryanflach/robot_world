@@ -1,72 +1,115 @@
-<h1>There be robots!</h1>
+<div class="row">
+  <h1 class="heading">Robot Directory Statistics</h1>
+</div>
+
 <% unless @robots.empty? %>
-  <p>Average robot age: <%= @avg_age %></p>
-  <p>Year Hired Statistics:</p>
-  <table>
-    <thead>
-      <th>Year</th>
-      <th>Number of Robots Hired</th>
-    </thead>
-    <tbody>
-      <% @years.each do |year, count| %>
-        <tr>
-          <td> <%= year %> </td>
-          <td> <%= count %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <br>
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <p><strong>Average robot age: <%= @avg_age %></strong></p>
+    </div>
+  </div>
 
   <br>
-  <p>Department Statistics:</p>
-  <table>
-    <thead>
-      <th>Department</th>
-      <th>Number of Robots in Department</th>
-    </thead>
-    <tbody>
-      <% @departments.each do |department, count| %>
-        <tr>
-          <td> <%= department %> </td>
-          <td> <%= count %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+
+  <div class="row">
+    <div class="col-md-6"
+      <p><strong>Year Hired Statistics:</strong></p>
+    </div>
+
+    <div class="col-md-6">
+      <p><strong>Department Statistics:</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-hover">
+        <thead>
+          <th>Year</th>
+          <th>Number of Robots Hired</th>
+        </thead>
+        <tbody>
+          <% @years.each do |year, count| %>
+            <tr>
+              <td> <%= year %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th>Department</th>
+          <th>Number of Robots in Department</th>
+        </thead>
+        <tbody>
+          <% @departments.each do |department, count| %>
+            <tr>
+              <td> <%= department %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <br>
-  <p>City Statistics:</p>
-  <table>
-    <thead>
-      <th>City</th>
-      <th>Number of Robots in City</th>
-    </thead>
-    <tbody>
-      <% @cities.each do |city, count| %>
-        <tr>
-          <td> <%= city %> </td>
-          <td> <%= count %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
   <br>
-  <p>State Statistics:</p>
-  <table>
-    <thead>
-      <th>State</th>
-      <th>Number of Robots in State</th>
-    </thead>
-    <tbody>
-      <% @states.each do |state, count| %>
-        <tr>
-          <td> <%= state %> </td>
-          <td> <%= count %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>City Statistics:</strong></p>
+    </div>
+
+    <div class="col-md-6">
+      <p><strong>State Statistics:</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th>City</th>
+          <th>Number of Robots in City</th>
+        </thead>
+        <tbody>
+          <% @cities.each do |city, count| %>
+            <tr>
+              <td> <%= city %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th>State</th>
+          <th>Number of Robots in State</th>
+        </thead>
+        <tbody>
+          <% @states.each do |state, count| %>
+            <tr>
+              <td> <%= state %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 <% end %>
 
-<a href="/robots/new"><button type="button">Create New Robot</button></a>
+<div class="row text-right">
+  <a href="/robots"><button type="button" class="btn btn-default">View All Robots</button></a>
+  <a href="/robots/new"><button type="button" class="btn btn-default last">Create New Robot</button></a>
+</div>

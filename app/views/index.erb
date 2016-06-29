@@ -1,1 +1,10 @@
 <h1>Here are your robots!</h1>
+<% @robots.each do |robot| %>
+  <img src=<%= robot.avatar %>></img>
+  <p>Name: <%= robot.name %> </p>
+  <p>City: <%= robot.city %> </p>
+  <p>State: <%= robot.state %> </p>
+  <p>Birthdate: <%= robot.birthdate %> </p>
+  <p>Date Hired: <%= robot.date_hired %> </p>
+  <p>Department: <%= robot.department %> </p>
+<% end %>

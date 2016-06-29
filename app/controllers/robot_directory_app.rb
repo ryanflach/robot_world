@@ -19,7 +19,13 @@ class RobotDirectoryApp < Sinatra::Base
 
   post '/robots' do
     robot_directory.create(params[:robot])
+    require 'pry'; binding.pry
     redirect '/robots'
+  end
+
+  get '/robots/:serial_number' do |serial|
+    robot_directory.find(serial.to_i)
+    erb :show
   end
 
   def robot_directory

@@ -13,12 +13,13 @@ class RobotDirectory
       directory['robots'] ||= []
       directory['total'] ||= 0
       directory['total'] += 1
-      directory['robots'] << { 'serial_number' => directory['total'] * rand(100),
+      serial = directory['total'] * rand(100)
+      directory['robots'] << { 'serial_number' => serial,
                                'name' => robot[:name],
                                'city' => robot[:city],
                                'state' => robot[:state],
-                               'avatar' => robot[:avatar],
-                               'birthdate' => robot[:birth_date],
+                               'avatar' => "https://robohash.org/#{serial}",
+                               'birthdate' => robot[:birthdate],
                                'date_hired' => robot[:date_hired],
                                'department' => robot[:department] }
     end

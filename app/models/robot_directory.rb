@@ -59,6 +59,7 @@ class RobotDirectory
   def delete(serial_number)
     directory.transaction do
       directory['robots'].delete_if { |robot| robot['serial_number'] == serial_number }
+      directory['total'] -= 1
     end
   end
 

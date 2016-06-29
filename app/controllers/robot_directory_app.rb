@@ -19,7 +19,6 @@ class RobotDirectoryApp < Sinatra::Base
 
   post '/robots' do
     robot_directory.create(params[:robot])
-    require 'pry'; binding.pry
     redirect '/robots'
   end
 

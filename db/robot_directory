@@ -1,3 +1,35 @@
 ---
-robots: []
-total: 1
+robots:
+- serial_number: 130
+  name: Ryan
+  city: State College
+  state: PA
+  avatar: https://robohash.org/130
+  birthdate: '1985-05-31'
+  date_hired: '2016-05-09'
+  department: STEM
+- serial_number: 297
+  name: Charlie
+  city: Denver
+  state: CO
+  avatar: https://robohash.org/297
+  birthdate: '2000-01-01'
+  date_hired: '2016-05-09'
+  department: Science!
+- serial_number: 100
+  name: Whatever
+  city: Whatever
+  state: CO
+  avatar: https://robohash.org/100
+  birthdate: '1940-05-31'
+  date_hired: '2014-05-12'
+  department: Languages
+- serial_number: 230
+  name: Angel
+  city: Los Angeles
+  state: CA
+  avatar: https://robohash.org/230
+  birthdate: '1975-01-20'
+  date_hired: '1985-05-21'
+  department: Programming
+total: 5

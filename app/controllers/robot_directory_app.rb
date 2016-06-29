@@ -5,6 +5,14 @@ class RobotDirectoryApp < Sinatra::Base
   set :method_override, true
 
   get '/' do
+    @robots = robot_directory.all
+    unless @robots.empty?
+      @avg_age = robot_directory.average_age
+      @years = robot_directory.hired_by_year
+      @departments = robot_directory.by_department
+      @cities = robot_directory.by_city
+      @states = robot_directory.by_state
+    end
     erb :dashboard
   end
 

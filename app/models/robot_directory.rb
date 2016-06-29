@@ -62,4 +62,37 @@ class RobotDirectory
     end
   end
 
+  def average_age
+    ages = all.map { |robot| Time.now.year - Time.new(robot.birthdate).year }
+    ages.reduce(:+) / ages.count
+  end
+
+  def hired_by_year
+    years = all.map { |robot| Time.new(robot.date_hired).year }.sort
+    unique_years = Hash.new(0)
+    years.each { |year| unique_years[year] += 1 }
+    unique_years
+  end
+
+  def by_department
+    departments = all.map { |robot| robot.department }.sort
+    unique_departments = Hash.new(0)
+    departments.each { |department| unique_departments[department] += 1 }
+    unique_departments
+  end
+
+  def by_city
+    cities = all.map { |robot| robot.city }.sort
+    unique_cities = Hash.new(0)
+    cities.each { |city| unique_cities[city] += 1 }
+    unique_cities
+  end
+
+  def by_state
+    states = all.map { |robot| robot.state }.sort
+    unique_states = Hash.new(0)
+    states.each { |state| unique_states[state] += 1 }
+    unique_states
+  end
+
 end

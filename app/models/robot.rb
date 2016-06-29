@@ -1,5 +1,6 @@
 class Robot
-  attr_reader :name,
+  attr_reader :serial_number,
+              :name,
               :city,
               :state,
               :avatar,

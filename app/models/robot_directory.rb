@@ -1,3 +1,6 @@
+require 'yaml/store'
+require_relative 'robot'
+
 class RobotDirectory
   attr_reader :directory
 
@@ -22,19 +25,17 @@ class RobotDirectory
   end
 
   def all
+    raw_robots.map { |robot| Robot.new(robot) }
+  end
+
+  def raw_robots
     directory.transaction do
-      robots.map { |robot| Robot.new(robot) }
+      directory['robots'] || []
     end
   end
 
-  def robots
-    directory.transaction do
-      database['robots'] || []
-    end
-  end
-
-  def robot(serial_number)
-    robots.find { |robot| robot['serial_number'] == serial_number }
+  def raw_robot(serial_number)
+    raw_robots.find { |robot| robot['serial_number'] == serial_number }
   end
 
   def update(serial_number, robot)

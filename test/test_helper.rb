@@ -9,7 +9,6 @@ require 'minitest/pride'
 module TestHelpers
 
   def teardown
-    # Need to write this method
     robot_directory.delete_all
     super
   end

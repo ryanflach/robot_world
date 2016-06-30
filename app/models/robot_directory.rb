@@ -48,7 +48,6 @@ class RobotDirectory
       target_robot['name']       = robot[:name]
       target_robot['city']       = robot[:city]
       target_robot['state']      = robot[:state]
-      target_robot['avatar']     = robot[:avatar]
       target_robot['birthdate']  = robot[:birthdate]
       target_robot['date_hired'] = robot[:date_hired]
       target_robot['department'] = robot[:department]

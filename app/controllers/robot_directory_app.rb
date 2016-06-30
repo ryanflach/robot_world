@@ -48,10 +48,11 @@ class RobotDirectoryApp < Sinatra::Base
 
   def robot_directory
     if ENV['RACK_ENV'] == 'test'
-      directory = YAML::Store.new('db/robot_directory_test')
+      directory = SQLite3::Database.new("db/robot_directory_test.db")
     else
-      directory = YAML::Store.new('db/robot_directory')
+      directory = SQLite3::Database.new("db/robot_directory_development.db")
     end
+    directory.results_as_hash = true
     @robot_directory ||= RobotDirectory.new(directory)
   end
 end

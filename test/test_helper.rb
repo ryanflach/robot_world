@@ -7,6 +7,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara'
 require 'launchy'
+require 'sqlite3'
 
 module TestHelpers
 
@@ -16,7 +17,8 @@ module TestHelpers
   end
 
   def robot_directory
-    database = YAML::Store.new('db/robot_directory_test')
+    database = SQLite3::Database.new("db/robot_directory_test.db")
+    database.results_as_hash = true
     @database ||= RobotDirectory.new(database)
   end
 

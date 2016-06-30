@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-class UserSeesRobots < FeatureTest
+class UserSeesRobotsTest < FeatureTest
   def test_user_can_see_all_robots
     robot_1 = {:name => 'Ryan',
                :city => 'State College', :state => 'PA',

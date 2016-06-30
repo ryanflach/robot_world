@@ -2,7 +2,7 @@
 <% @robots.each do |robot| %>
   <div class="col-md-3 text-center">
     <br />
-    <img src=<%= robot.avatar %> class="img-responsive center-block img-thumbnail" alt="Picture of robot <%= robot.name %>" height="50%" width="50%"></img>
+    <a href="/robots/<%= robot.serial_number %>" id="<%= robot.serial_number %>"><img src=<%= robot.avatar %> class="img-responsive center-block img-thumbnail" alt="Picture of robot <%= robot.name %>" height="50%" width="50%"></img></a>
     <a href="/robots/<%= robot.serial_number %>" id="<%= robot.serial_number %>" class="robot"><h4><%= robot.name %></h4></a>
     <br /><br />
   </div>

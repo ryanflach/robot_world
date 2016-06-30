@@ -1,18 +1,44 @@
 <h1 class="heading">Editing <%= @robot.name %></h1>
 
-<form action="/robots/<%= @robot.serial_number %>" method="post">
-  <input type="hidden" name="_method" value="PUT" />
-  <label for="robot[name]">Name</label>
-  <input type="text" name="robot[name]" value=<%= @robot.name %> required="required" />
-  <label for="robot[city]">City</label>
-  <input type="text" name="robot[city]" value=<%= @robot.city %> required="required" />
-  <label for="robot[state]">State</label>
-  <input type="text" name="robot[state]" value=<%= @robot.state %> required="required" />
-  <label for="robot[birthdate]">Birthdate</label>
-  <input type="date" name="robot[birthdate]" value=<%= @robot.birthdate %> required="required" />
-  <label for="robot[date_hired]">Date Hired</label>
-  <input type="date" name="robot[date_hired]" value=<%= @robot.date_hired %> required="required" />
-  <label for="robot[department]">Department</label>
-  <input type="text" name="robot[department]" value=<%= @robot.department %> required="required" />
-  <button type="submit" class="btn btn-default">Edit Robot</button>
-</form>
+<div class="row col-md-12">
+  <form action="/robots/<%= @robot.serial_number %>" method="post">
+    <input type="hidden" name="_method" value="PUT" />
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="robot[name]">Name</label>
+        <input type="text" name="robot[name]" value=<%= @robot.name %> required="required" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="robot[city]">City</label>
+        <input type="text" name="robot[city]" value=<%= @robot.city %> required="required" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="robot[state]">State</label>
+        <input type="text" name="robot[state]" value=<%= @robot.state %> required="required" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="robot[birthdate]">Birthdate</label>
+        <input type="date" name="robot[birthdate]" value=<%= @robot.birthdate %> required="required" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="robot[date_hired]">Date Hired</label>
+        <input type="date" name="robot[date_hired]" value=<%= @robot.date_hired %> required="required" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="robot[department]">Department</label>
+        <input type="text" name="robot[department]" value=<%= @robot.department %> required="required" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-8 text-left">
+      <a href="/robots"><button type="button" class="btn btn-default">Back to Index</button></a>
+      <a href="/"><button type="button" class="btn btn-default back_button">Back to Dashboard</button></a>
+      <br /><br />
+    </div>
+    <div class="col-md-4 text-right">
+      <button type="submit" class="btn btn-primary">Edit Robot</button>
+      <a href="/robots/<%= @robot.serial_number %>"><button type="button" class="btn btn-default back_button">Cancel</button></a>
+    </div>
+  </form>
+</div>

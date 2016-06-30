@@ -1,11 +1,43 @@
 ---
 robots:
 - serial_number: 112
-  name: Ryan
+  name: Charlie
   city: San
   state: CA
   avatar: https://robohash.org/112
   birthdate: '1995-02-12'
   date_hired: '2009-02-05'
   department: Wellness
-total: 1
+- serial_number: 16
+  name: James
+  city: Denver
+  state: CO
+  avatar: https://robohash.org/16
+  birthdate: '1980-05-31'
+  date_hired: '2004-10-12'
+  department: Engineering
+- serial_number: 231
+  name: Whiz
+  city: Kalamazoo
+  state: MI
+  avatar: https://robohash.org/231
+  birthdate: '1995-01-12'
+  date_hired: '2016-06-20'
+  department: Drawing
+- serial_number: 316
+  name: Tester
+  city: San Diego
+  state: CA
+  avatar: https://robohash.org/316
+  birthdate: '1994-06-09'
+  date_hired: '2009-10-05'
+  department: Drawing
+- serial_number: 310
+  name: Big Guy
+  city: Atlanta
+  state: GA
+  avatar: https://robohash.org/310
+  birthdate: '1960-05-04'
+  date_hired: '1990-06-20'
+  department: Engineering
+total: 5

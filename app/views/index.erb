@@ -1,9 +1,16 @@
-<h1 class="heading">Here are your robots!</h1>
+<h1 class="heading">Currently Assembled Robots</h1>
 <% @robots.each do |robot| %>
-  <div class="col-md-4 text-center">
-    <img src=<%= robot.avatar %>></img>
-    <h3><%= robot.name %> </h3>
-    <a href="/robots/<%= robot.serial_number %>"><button class="btn btn-default">View Profile</button></a>
+  <div class="col-md-3 text-center">
+    <br />
+    <img src=<%= robot.avatar %> class="img-responsive center-block img-thumbnail" alt="Picture of robot <%= robot.name %>" height="50%" width="50%"></img>
+    <h4><%= robot.name %></h4>
+    <a href="/robots/<%= robot.serial_number %>"><button class="btn btn-xs btn-default">View Profile</button></a>
     <br /><br />
   </div>
 <% end %>
+
+<div class="col-md-12 text-center">
+  <br /><br />
+  <a href="/"><button type="button" class="btn btn-default">Back to Dashboard</button></a>
+  <br /><br />
+</div>

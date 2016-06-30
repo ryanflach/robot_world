@@ -27,3 +27,7 @@ label {
 .last {
   margin: 10px 20px;
 }
+
+.table_top {
+  border: 0;
+}

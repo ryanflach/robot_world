@@ -1,15 +1,56 @@
-<h1>Profile for <%= @robot.name %> <small> Serial #: <%= @robot.serial_number %></small></h1>
-<img src=<%= @robot.avatar %>></img>
-<p>Name: <%= @robot.name %> </p>
-<p>City: <%= @robot.city %> </p>
-<p>State: <%= @robot.state %> </p>
-<p>Birthdate: <%= @robot.birthdate %> </p>
-<p>Date Hired: <%= @robot.date_hired %> </p>
-<p>Department: <%= @robot.department %> </p>
+<h1 class="heading">Profile for <%= @robot.name %> <small> Serial #: <%= @robot.serial_number %></small></h1>
+<div class="row col-md-12">
+  <div class="col-md-4">
+    <img src=<%= @robot.avatar %> class="img-responsive center-block img-circle"></img>
+  </div>
 
-<form action="/robots/<%= @robot.serial_number %>" method="post">
-  <input type="hidden" name="_method" value="DELETE" />
-  <button type="submit">Delete Robot</button>
-</form>
+  <div class="col-md-8">
+    <br /><br /><br /><br />
+    <table class="table table-bordered">
+      <tr>
+        <th class="col-md-3">Name</th>
+        <td><%= @robot.name %></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td><%= @robot.city %></td>
+      </tr>
+      <tr>
+        <th>State</th>
+        <td><%= @robot.state %></td>
+      </tr>
+      <tr>
+        <th>Birthdate</th>
+        <td><%= @robot.birthdate %></td>
+      </tr>
+      <tr>
+        <th>Date Hired</th>
+        <td><%= @robot.date_hired %></td>
+      </tr>
+      <tr>
+        <th>Department</th>
+        <td><%= @robot.department %></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
-<a href="/robots/<%= @robot.serial_number %>/edit"><button type="button">Edit Robot</button></a>
+<div class="row col-md-12">
+  <br />
+  <div class="col-md-2 text-right">
+    <form action="/robots/<%= @robot.serial_number %>" method="post">
+      <input type="hidden" name="_method" value="DELETE" />
+      <button type="submit" class="btn btn-danger">Delete Robot</button>
+    </form>
+  </div>
+  <div class="col-md-2 text-left">
+    <a href="/robots/<%= @robot.serial_number %>/edit"><button type="button" class="btn btn-primary">Edit Robot</button></a>
+  </div>
+  <div class="col-md-6 text-right">
+    <a href="/robots"><button type="button" class="btn btn-default">Back to Robots</button></a>
+  </div>
+  <div class="col-md-2 text-right">
+    <a href="/"><button type="button" class="btn btn-default">Back to Dashboard</button></a>
+  </div>
+  <br /><br /><br />
+</div>

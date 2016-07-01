@@ -16,7 +16,7 @@ class RobotDirectoryTest < Minitest::Test
 
     assert_equal 1, robot_directory.all.count
 
-    found_robot = robot_directory.find(robot_directory.all[0].serial_number)
+    found_robot = robot_directory.find(robot_directory.all.first.serial_number)
 
     assert_equal 'Ryan', found_robot.name
     assert_instance_of Robot, found_robot

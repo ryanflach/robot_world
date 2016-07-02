@@ -9,7 +9,7 @@ class RobotDirectoryApp < Sinatra::Base
       @cities = robot_directory.by_city
       @states = robot_directory.by_state
     end
-    erb :dashboard
+    haml :dashboard
   end
 
   get '/robots/new' do

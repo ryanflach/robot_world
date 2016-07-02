@@ -1,3 +1,5 @@
+require 'pony'
+
 class RobotDirectoryApp < Sinatra::Base
 
   get '/' do
@@ -23,6 +25,12 @@ class RobotDirectoryApp < Sinatra::Base
 
   post '/robots' do
     robot_directory.create(params[:robot])
+    @robot = robot_directory.find(robot_directory.all.last.serial_number)
+    # Pony does not currently work - I believe I'd need to provide valid log-in information for the 'from' e-mail and route via SMTP if using gmail.
+    Pony.mail :to => 'ryanflach@gmail.com',
+              :from => 'ryanflach@gmail.com',
+              :subject => "A robot named #{params[:robot][:name]}",
+              :body => "A new robot has been created!"
     redirect '/robots'
   end
 

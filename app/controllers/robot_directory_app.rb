@@ -2,6 +2,10 @@ require 'pony'
 
 class RobotDirectoryApp < Sinatra::Base
 
+  use Rack::Auth::Basic, "Authorized Robot Makers Only" do |username, password|
+    username == 'admin' and password == 'admin'
+  end
+
   get '/' do
     @robots = robot_directory.all
     unless @robots.empty?

@@ -30,11 +30,22 @@ class RobotDirectoryApp < Sinatra::Base
   post '/robots' do
     robot_directory.create(params[:robot])
     @robot = robot_directory.find(robot_directory.all.last.serial_number)
-    # Pony does not currently work - I believe I'd need to provide valid log-in information for the 'from' e-mail and route via SMTP if using gmail.
-    Pony.mail :to => 'ryanflach@gmail.com',
-              :from => 'ryanflach@gmail.com',
-              :subject => "A robot named #{params[:robot][:name]}",
-              :body => "A new robot has been created!"
+    unless params[:email].nil?
+      Pony.mail({:to => params[:email],
+                :subject => "A robot named #{@robot.name} has been created!",
+                :body => "Thanks for building #{@robot.name}! Their unique serial number is #{@robot.serial_number}.",
+                :via => :smtp,
+                :via_options => {
+                  :address              => 'smtp.gmail.com',
+                  :port                 => '587',
+                  :enable_starttls_auto => true,
+                  :user_name            => 'robotworldsender@gmail.com',
+                  :password             => 'p@ssword9!',
+                  :authentication       => :plain,
+                  :domain               => 'localhost.localdomain'
+                }
+      })
+    end
     redirect '/robots'
   end
 

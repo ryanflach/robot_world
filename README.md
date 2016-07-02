@@ -1,7 +1,11 @@
 # Robot Directory
 An exercise in CRUD (Create Read Update Delete) programming, explored via an interactive website that allows the user to create new robots and edit and delete their existing robots.
 
-Utilizes SQLite3 for its database, Bootstrap for CSS, and ERB for it's views (HAML is used for the dashboard, as an additional exercise).
+Robot Directory utilizes:
+* SQLite3 for its database
+* Bootstrap for CSS
+* ERB for it's views (HAML is used for the dashboard, as an additional exercise)
+* Pony for sending confirmation e-mails
 
 Additionally, basic HTTP authorization is in place to protect the app from unknown individuals.
 

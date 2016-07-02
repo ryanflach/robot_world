@@ -35,3 +35,7 @@ label {
 .robot {
   color: white;
 }
+
+.panel-body {
+  color: black;
+}

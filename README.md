@@ -10,7 +10,7 @@ Robot Directory utilizes:
 Additionally, basic HTTP authorization is in place to protect the app from unknown individuals.
 
 ## Usage
-In the terminal, from the root folder of the project (`robot_world`), run `shotgun`.
+In the terminal, from the root folder of the project (`robot_world`), run `bundle`, then `shotgun`.
 
 In your web browser, navigate to `localhost:9393`. **username and password are both 'admin'**.
 

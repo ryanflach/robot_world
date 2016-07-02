@@ -31,7 +31,7 @@ class RobotDirectoryApp < Sinatra::Base
   post '/robots' do
     robot_directory.create(params[:robot])
     @robot = robot_directory.find(robot_directory.all.last.serial_number)
-    unless params[:email].nil?
+    unless params[:email].empty?
       Pony.mail({:to => params[:email],
                 :subject => "A robot named #{@robot.name} has been created!",
                 :body => "Thanks for building #{@robot.name}! Their unique serial number is #{@robot.serial_number}.",

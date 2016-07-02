@@ -16,3 +16,6 @@ In the terminal, from the root folder of the project (`robot_world`), run `bundl
 In your web browser, navigate to `localhost:9393`. **username and password are both 'admin'**.
 
 Buttons will guide your navigation and creation, viewing, and editing of robots in the directory (database).
+
+### Tests
+Basic model and feature tests are included. Due to the HTTP basic authorization in place, please note that you must comment out lines 5-7 in `/app/controllers/robot_directory_app.rb` for the tests to pass.

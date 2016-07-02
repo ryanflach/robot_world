@@ -19,6 +19,7 @@ class RobotDirectoryApp < Sinatra::Base
   end
 
   get '/robots/new' do
+    @fake_robot = robot_directory.faker_info
     erb :new
   end
 

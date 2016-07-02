@@ -1,3 +1,5 @@
+require 'faker'
+
 class RobotDirectory
   attr_reader :directory
 
@@ -84,6 +86,16 @@ class RobotDirectory
 
   def delete_all
     directory.execute("DELETE FROM robots;")
+  end
+
+  def faker_info
+    {:name       => Faker::Name.first_name,
+     :city       => Faker::Address.city,
+     :state      => Faker::Address.state_abbr,
+     :birthdate  => Faker::Date.between('1900-01-01', '2000-01-01'),
+     :date_hired => Faker::Date.between('2000-01-01', Date.today),
+     :department => Faker::Commerce.department
+    }
   end
 
 end

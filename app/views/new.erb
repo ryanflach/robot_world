@@ -1,0 +1,52 @@
+<h1 class="heading">Create a New Robot!</h1>
+<div class="col-md-12">
+  <div class="alert alert-info" role="alert">
+    Random information has been generated below - feel free to replace any and all with your own!
+  </div>
+</div>
+<div class="row col-md-12">
+  <form action="/robots" method="post">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="robot[name]">Name</label>
+        <input type="text" name="robot[name]" required="required" class="form-control" value=<%= @fake_robot[:name] %> />
+      </div>
+      <div class="form-group">
+        <label for="robot[city]">City</label>
+        <input type="text" name="robot[city]" required="required" class="form-control" value=<%= @fake_robot[:city] %> />
+      </div>
+      <div class="form-group">
+        <label for="robot[state]">State</label>
+        <input type="text" name="robot[state]" required="required" class="form-control" value=<%= @fake_robot[:state] %> />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="robot[birthdate]">Birthdate</label>
+        <input type="date" name="robot[birthdate]" required="required" class="form-control" value=<%= @fake_robot[:birthdate] %> />
+      </div>
+      <div class="form-group">
+        <label for="robot[date_hired]">Date Hired</label>
+        <input type="date" name="robot[date_hired]" required="required" class="form-control" value=<%= @fake_robot[:date_hired] %> />
+      </div>
+      <div class="form-group">
+        <label for="robot[department]">Department</label>
+        <input type="text" name="robot[department]" required="required" class="form-control" value=<%= @fake_robot[:department] %> />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="email">Your Email Address (to receive a confirmation email)</label>
+        <input type="email" name="email" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-10 text-left">
+      <a href="/robots"><button type="button" class="btn btn-default">Back to Index</button></a>
+      <a href="/"><button type="button" class="btn btn-default back_button">Back to Dashboard</button></a>
+      <br /><br />
+    </div>
+    <div class="col-md-2 text-right">
+      <button type="submit" class="btn btn-danger">Create Robot</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,74 @@
+.row
+  %h1{:class => "heading"} Robot Directory Statistics
+
+- unless @robots.empty?
+  %br
+  .row.text-center
+    .col-md-12
+      %h4 Average robot age: #{@avg_age}
+  %br
+
+  .row.text-center
+    .col-md-6
+      %h4 Year Hired Statistics:
+    .col-md-6
+      %h4 Department Statistics:
+  .row
+    .col-md-6
+      %table{:class => "table"}
+        %thead
+          %th{:class => "col-md-2"} Year
+          %th{:class => "col-md-4"} Number of Robots Hired
+        %tbody
+          - @years.each do |year, count|
+            %tr
+              %td= year
+              %td= count
+
+    .col-md-6
+      %table{:class => "table"}
+        %thead
+          %th{:class => "col-md-2"} Department
+          %th{:class => "col-md-4"} Number of Robots in Department
+        %tbody
+          - @departments.each do |department, count|
+            %tr
+              %td= department
+              %td= count
+
+  %br
+  %br
+
+  .row.text-center
+    .col-md-6
+      %h4 City Statistics:
+    .col-md-6
+      %h4 State Statistics:
+
+  .row
+    .col-md-6
+      %table{:class => "table"}
+        %thead
+          %th{:class => "col-md-2"} City
+          %th{:clsss => "col-md-4"} Number of Robots in City
+        %tbody
+          - @cities.each do |city, count|
+            %tr
+              %td= city
+              %td= count
+    .col-md-6
+      %table{:class => "table"}
+        %thead
+          %th{:class => "col-md-2"} State
+          %th{:class => "col-md-4"} Number of Robots in State
+        %tbody
+          - @states.each do |state, count|
+            %tr
+              %td= state
+              %td= count
+
+.row.text-right
+  %a{:href => "/robots"}
+    %button{:type => "button", :class => "btn btn-default"} View All Robots
+  %a{:href => "/robots/new"}
+    %button{:type => "button", :class => "btn btn-warning last"} Create New Robot

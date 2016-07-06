@@ -1,0 +1,26 @@
+<h1 class="heading">Currently Assembled Robots</h1>
+<div class="col-md-12">
+  <%= erb :frame %>
+</div>
+
+<% @robots.each do |robot| %>
+  <div class="col-md-3 text-center">
+    <br />
+    <a href="/robots/<%= robot.serial_number %>" id="<%= robot.serial_number %>"><img src=<%= robot.avatar %> class="img-responsive center-block img-thumbnail" alt="Picture of robot <%= robot.name %>" height="50%" width="50%"></img></a>
+    <a href="/robots/<%= robot.serial_number %>" id="<%= robot.serial_number %>" class="robot"><h4><%= robot.name %></h4></a>
+    <br /><br />
+  </div>
+<% end %>
+
+<div class="row col-md-12">
+  <br /><br />
+  <div class="col-md-6 text-right">
+    <a href="/"><button type="button" class="btn btn-default">Back to Dashboard</button></a>
+  </div>
+
+  <div class="col-md-6 text-left">
+    <a href="/robots/new"><button type="button" class="btn btn-warning">Create New Robot</button></a>
+  </div>
+  <br /><br /><br />
+
+</div>

@@ -1,1 +1,116 @@
-<h1>There be robots!</h1>
+<div class="row">
+  <h1 class="heading">Robot Directory Statistics</h1>
+</div>
+
+<% unless @robots.empty? %>
+  <br>
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h4> Average robot age: <%= @avg_age %> </h4>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row text-center">
+    <div class="col-md-6">
+      <h4>Year Hired Statistics:</h4>
+    </div>
+
+    <div class="col-md-6">
+      <h4>Department Statistics:</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th class="col-md-2">Year</th>
+          <th class="col-md-4">Number of Robots Hired</th>
+        </thead>
+        <tbody>
+          <% @years.each do |year, count| %>
+            <tr>
+              <td> <%= year %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th class="col-md-2">Department</th>
+          <th class="col-md-4">Number of Robots in Department</th>
+        </thead>
+        <tbody>
+          <% @departments.each do |department, count| %>
+            <tr>
+              <td> <%= department %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="row text-center">
+    <div class="col-md-6">
+      <h4>City Statistics:</h4>
+    </div>
+
+    <div class="col-md-6">
+      <h4>State Statistics:</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th class="col-md-2">City</th>
+          <th class="col-md-4">Number of Robots in City</th>
+        </thead>
+        <tbody>
+          <% @cities.each do |city, count| %>
+            <tr>
+              <td> <%= city %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <th class="col-md-2">State</th>
+          <th class="col-md-4">Number of Robots in State</th>
+        </thead>
+        <tbody>
+          <% @states.each do |state, count| %>
+            <tr>
+              <td> <%= state %> </td>
+              <td> <%= count %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<% end %>
+
+<div class="row text-right">
+  <a href="/robots"><button type="button" class="btn btn-default">View All Robots</button></a>
+  <a href="/robots/new"><button type="button" class="btn btn-warning last">Create New Robot</button></a>
+  <br />
+</div>
